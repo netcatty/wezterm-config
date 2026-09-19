@@ -2,6 +2,12 @@
 return {
    -- behaviours
    automatically_reload_config = true,
+
+   -- 默认 shell:Git Bash,-l 登录 shell;想用 PowerShell 就换 powershell.exe / pwsh.exe
+   default_prog = { 'bash.exe', '-l' },
+
+   -- 启动目录
+   default_cwd = 'D:\\code',
    exit_behavior = 'CloseOnCleanExit', -- if the shell program exited with a successful status
    exit_behavior_messaging = 'Verbose',
    status_update_interval = 1000,

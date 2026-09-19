@@ -49,6 +49,10 @@ return {
       top = 10,
       bottom = 7.5,
    },
+   -- 窗口装饰:RESIZE = 无标题栏,仅保留可缩放边框
+   window_decorations = 'RESIZE',
+   window_background_opacity = 0.95,
+   win32_system_backdrop = 'Acrylic', -- 可选 'Mica' / 'Tabbed' / 'Acrylic'
    adjust_window_size_when_changing_font_size = false,
    window_close_confirmation = 'NeverPrompt',
    window_frame = {

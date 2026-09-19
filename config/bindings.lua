@@ -57,6 +57,10 @@ local keys = {
    -- copy/paste --
    { key = 'c',          mods = 'CTRL|SHIFT',  action = act.CopyTo('Clipboard') },
    { key = 'v',          mods = 'CTRL|SHIFT',  action = act.PasteFrom('Clipboard') },
+   -- Ctrl+V 粘贴(Ctrl+C 仍留给中断程序)
+   { key = 'v',          mods = 'CTRL',        action = act.PasteFrom('Clipboard') },
+   -- Shift+Enter:发送 ESC+CR,Claude Code 等 TUI 识别为"插入换行"而非提交
+   { key = 'Enter',      mods = 'SHIFT',       action = act.SendString('\u{1b}\r') },
 
    { key = 'n',          mods = 'CTRL|SHIFT',  action = act.SendString('\u{2660}') },
    { key = 's',          mods = 'CTRL|SHIFT',  action = act.SendString('\u{203D}') },
@@ -228,6 +232,15 @@ local keys = {
       }),
    },
 }
+
+-- CTRL+ALT+1..8 跳转到第 N 个标签
+for i = 1, 8 do
+   table.insert(keys, { key = tostring(i), mods = 'CTRL|ALT', action = act.ActivateTab(i - 1) })
+end
+-- SHIFT+ALT+{ / } 移动标签顺序
+keys[#keys + 1] = { key = '{', mods = 'SHIFT|ALT', action = act.MoveTabRelative(-1) }
+keys[#keys + 1] = { key = '}', mods = 'SHIFT|ALT', action = act.MoveTabRelative(1) }
+
 
 -- stylua: ignore
 ---@type table<string, Key[]>
