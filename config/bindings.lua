@@ -1,5 +1,6 @@
 local wezterm = require('wezterm')
 local platform = require('utils.platform')
+local resurrect = wezterm.plugin.require('https://github.com/StephenGemin/resurrect.wezterm')
 local backdrops = require('utils.backdrops')
 local act = wezterm.action
 
@@ -231,6 +232,13 @@ local keys = {
          timeout_milliseconds = 1000,
       }),
    },
+
+   -- resurrect.wezterm:会话保存/恢复(避开 Alt+W/D/R/S 冲突,统一用 CTRL|SHIFT)
+   { key = 's', mods = 'CTRL|SHIFT', action = resurrect.workspace_state.save_workspace_action() },
+   { key = 'S', mods = 'CTRL|SHIFT', action = resurrect.window_state.save_window_action() },
+   { key = 'T', mods = 'CTRL|SHIFT', action = resurrect.tab_state.save_tab_action() },
+   { key = 'r', mods = 'CTRL|SHIFT', action = resurrect.fuzzy_loader.restore_action() },
+   { key = 'x', mods = 'CTRL|SHIFT', action = resurrect.fuzzy_loader.delete_action() },
 }
 
 -- CTRL+ALT+1..8 跳转到第 N 个标签
