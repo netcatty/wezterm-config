@@ -1,6 +1,10 @@
 <h2 align="center">My WezTerm Config</h2>
 
 <p align="center">
+  <a href="README.md">English</a> | <a href="README.zh-CN.md">简体中文</a>
+</p>
+
+<p align="center">
   <a href="https://github.com/KevinSilvester/wezterm-config/stargazers">
     <img alt="Stargazers" src="https://img.shields.io/github/stars/KevinSilvester/wezterm-config?style=for-the-badge&logo=starship&color=C9CBFF&logoColor=D9E0EE&labelColor=302D41">
   </a>
@@ -251,6 +255,31 @@ Most of the key bindings revolve around a <kbd>SUPER</kbd> and <kbd>SUPER_REV</k
 | --------------------------------------------- | -------------------- |
 | <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>c</kbd> | Copy to Clipboard    |
 | <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>v</kbd> | Paste from Clipboard |
+| <kbd>Ctrl</kbd>+<kbd>v</kbd>                   | Paste from Clipboard |
+| <kbd>Shift</kbd>+<kbd>Enter</kbd>             | Send `ESC+CR` <sub>(insert newline for TUI apps like Claude Code)</sub> |
+
+&nbsp;
+
+#### Sessions (resurrect.wezterm)
+
+| Keys                                          | Action                       |
+| --------------------------------------------- | ---------------------------- |
+| <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>s</kbd> | Save workspace state         |
+| <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd> | Save window state            |
+| <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd> | Save tab state               |
+| <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>r</kbd> | Fuzzy restore saved state    |
+| <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>x</kbd> | Fuzzy delete saved state     |
+
+> Auto-save every 5 minutes and on focus loss. Restores layout + working directories;
+> foreground processes relaunch only if on the safe list (`herdr`).
+
+#### Tabs: Index
+
+| Keys                              | Action                   |
+| --------------------------------- | ------------------------ |
+| <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>1..8</kbd> | Jump to tab N |
+| <kbd>Shift</kbd>+<kbd>Alt</kbd>+<kbd>{</kbd>   | Move Tab Left |
+| <kbd>Shift</kbd>+<kbd>Alt</kbd>+<kbd>}</kbd>   | Move Tab Right |
 
 &nbsp;
 
