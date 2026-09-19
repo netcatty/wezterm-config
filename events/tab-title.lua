@@ -404,7 +404,7 @@ local progress_cells = Cells:new():add_segment(RS.progress):add_segment(RS.paddi
 local title_cells = Cells:new()
    :add_segment(RS.scircle_left, ICON_SCIRCLE_LEFT)
    :add_segment(RS.icon)
-   :add_segment(RS.title, nil, nil, attr(attr.intensity('Bold')))
+   :add_segment(RS.title) -- 去掉合成 Bold，避免实际渲染宽度 > column_width 导致标签文字重叠
    :add_nested_segment(RS.progress)
    :add_segment(RS.unseen_output)
    :add_segment(RS.padding, ' ')

@@ -1,5 +1,14 @@
 <h2 align="center">My WezTerm Config</h2>
 
+### Notable customizations
+
+- No titlebar with Acrylic backdrop at 95% opacity.
+- Default shell: Git Bash (`bash.exe -l`), start dir: `D:\code`.
+- Font: JetBrainsMono Nerd Font + CJK/emoji fallbacks.
+- Session persistence via [resurrect.wezterm](https://github.com/StephenGemin/resurrect.wezterm) (autosave every 5 min + on focus loss).
+- Tab titles use `process_name ~ cwd` without synthetic Bold to avoid overlapping text.
+- Key bindings extended: Ctrl+V, Shift+Enter, tab jump/move, resurrect save/restore.
+
 <p align="center">
   <a href="README.md">English</a> | <a href="README.zh-CN.md">简体中文</a>
 </p>

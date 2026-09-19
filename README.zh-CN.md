@@ -1,5 +1,14 @@
 <h2 align="center">我的 WezTerm 配置</h2>
 
+### 主要定制
+
+- 无标题栏 + 亚克力毛玻璃 95% 透明度
+- 默认 shell：Git Bash（`bash.exe -l`），启动目录 `D:\code`
+- 字体：JetBrainsMono Nerd Font + 中文/emoji 回退
+- 接入 [resurrect.wezterm](https://github.com/StephenGemin/resurrect.wezterm)（每 5 分钟自动保存、失焦即存）
+- 标签标题修复：去掉合成 Bold，消除字形宽度偏差导致的重叠；现在仅用 `进程名 ~ 目录` + 补空格，`tab_max_width = 23`
+- 新增键位：Ctrl+V、Shift+Enter、标签跳转/移动、会话保存/恢复
+
 <p align="center">
   <a href="README.md">English</a> | <a href="README.zh-CN.md">简体中文</a>
 </p>
